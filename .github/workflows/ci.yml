@@ -18,17 +18,24 @@ jobs:
         env:
           ACTION_DEPLOY_KEY: ${{ secrets.ACTION_DEPLOY_KEY }}
         run: |
-          # mkdir -p ~/.ssh/
-          # echo "$ACTION_DEPLOY_KEY" | tr -d '\r' > ~/.ssh/id_rsa
-          # chmod 600 ~/.ssh/id_rsa
-          # ssh-keyscan github.com >> ~/.ssh/known_hosts
-          
-          # git config --global user.name 'silverster98'
-          # git config --global user.email '1539168414@qq.com'
+          mkdir -p ~/.ssh/
+          echo "$ACTION_DEPLOY_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+          git config --global user.name 'silverster98'
+          git config --global user.email '1539168414@qq.com'
           
           npm i
           npm run build
 
-      - name: Deploy
-        run: |
-          echo "hello"
+          cat index.html | sed 's/dist\///g' > ./dist/index.html
+          cp -r page/ dist/
+
+          cd dist
+          git init
+          git add .
+          git commit -m "update at $(date)"
+          git remote add origin git@github.com:Silverster98/Silverster98.github.io.git
+          git push origin master -f
+          
