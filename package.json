@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js && node tool.js",
+    "run": "http-server ./dist -p 4000"
   },
   "repository": {
     "type": "git",
@@ -14,6 +15,7 @@
   "author": "silvester <1539168414@qq.com>",
   "license": "MIT",
   "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.1",
     "style-loader": "^1.0.1",
     "webpack": "^4.41.2",

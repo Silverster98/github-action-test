@@ -22,5 +22,5 @@ I am an undergraduate majoring in Internet of Things in Beijing Institute of Tec
 
 - [BIT MIPS Experiments](https://github.com/bit-mips/bitmips_experiments_doc)
 
-    This is a series of experiments about computer system. It aims at guiding benginner to implement a simple computer system which includes hardware and software. It beigns with some simple experiments such as implementation of full adder. Step by step, the difficulty will raise. Finall, you will implement a MIPS CPU on which softwares such as [ucore-OS](https://github.com/oscourse-tsinghua/ucore_os_lab) can run.
+    This is a series of experiments about computer system. It aims at guiding beginner to implement a simple computer system which includes hardware and software. It beigns with some simple experiments such as implementation of full adder. Step by step, the difficulty will raise. Finally, you will implement a MIPS CPU on which softwares such as [ucore-OS](https://github.com/oscourse-tsinghua/ucore_os_lab) can run.
 

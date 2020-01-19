@@ -29,7 +29,6 @@ jobs:
           npm i
           npm run build
 
-          cat index.html | sed 's/dist\///g' > ./dist/index.html
           cp -r page/ dist/
 
           cd dist
