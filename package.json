@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.js && node tool.js",
-    "run": "http-server ./dist -p 4000"
+    "run": "powershell cp -r page dist && http-server ./dist -p 4000"
   },
   "repository": {
     "type": "git",

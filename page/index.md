@@ -6,11 +6,7 @@
 
 I am an undergraduate majoring in Internet of Things in Beijing Institute of Technology. In the future, I will study in Media Computing and Intelligent Systems Lab, BIT during my postgraduate period.
 
-#### Contact Me
-
-[Github](https://github.com/Silverster98)
-
-[zhihu](https://www.zhihu.com/people/chao-ji-zan-73/activities)
+<a href="https://github.com/Silverster98" style="margin-left:10px"><i class="fa fa-github fa-lg"></i></a>
 
 ## Research
 
