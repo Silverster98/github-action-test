@@ -30,6 +30,7 @@ jobs:
           npm run build
 
           cp -r page/ dist/
+          cp -r gadget/ dist/
 
           cd dist
           git init
