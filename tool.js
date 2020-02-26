@@ -30,12 +30,15 @@ let copyTempleteFolder = function(src, tar) {
             copyTempleteFolder(srcP, tarP)
           })
         } else {
-          if (tarP == indexPath) fs.writeFile(tarP, indexContent, (err) => {}) // index page
-          else fs.writeFile(tarP, templeteContent, (err) => {}) // templete page
+          let t = tarP.split(path.sep)
+          if (t.length > 2) 
+            fs.writeFile(tarP, templeteContent, (err) => {}) // templete page
         }
       })
     })
   })
 }
+
+fs.writeFile(indexPath, indexContent, (err) => {})
 
 copyTempleteFolder(src, tar)

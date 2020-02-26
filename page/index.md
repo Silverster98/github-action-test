@@ -1,6 +1,3 @@
-# Zan Wang
-
----
 
 ## About Me
 
