@@ -4,4 +4,8 @@ This tool allows you to "edit" an image pixel by pixel. You can just click your 
 
 [Demo Link](/gadget/pixel_drawer/index.html)
 
-## 
+## Timing Creator
+
+Use code to create a timing figure usually used in digital circuit design to indicate temporal relation. Just follow the mapping between character and it's meaning, then you can make it.
+
+[Demo Link](gadget/timing_creator/index.html)
