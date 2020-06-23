@@ -33,6 +33,7 @@ jobs:
           cp -r gadget/ dist/
 
           cd dist
+          echo 'silvester.wang' > CNAME
           git init
           git add .
           git commit -m "update at $(date)"
