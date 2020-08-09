@@ -13,7 +13,7 @@ window.onload = function () {
   let tabs = document.getElementById('tabs-ul')
   if (tabs != null) { // 是主页时才有 tabs-ul
     tabs = tabs.children
-    for (let i = 0; i < tabs.length; i++) {
+    for (let i = 0; i < tabs.length - 1; i++) {
       tabs[i].onclick = (e) => {
         clickTab(e, tabs, i)
       }
@@ -22,6 +22,7 @@ window.onload = function () {
 
   let p = window.location.pathname
   if (p.split('/').length == 2) { // url 为主页的 url, 此时只加载第一个 tab
+    console.log('tag')
     tabs[0].dispatchEvent(new MouseEvent('click', {}))
   } else { // 为其他 url 时，一般可能是 blog 的 url, 那么就加载 blog 的 md
     let md = p.charAt(p.length - 1) == '/' ? p.concat('index.md') : p.replace('.html', '.md')

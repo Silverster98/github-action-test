@@ -7,7 +7,7 @@ let index = './templete/index.html'
 let templete = './templete/templete.html'
 
 let indexContent = fs.readFileSync(index, 'utf8')
-let templeteContent = fs.readFileSync(templete, 'utf8')
+// let templeteContent = fs.readFileSync(templete, 'utf8')
 
 let src = './page'
 let tar = './dist'
@@ -41,4 +41,4 @@ let copyTempleteFolder = function(src, tar) {
 
 fs.writeFile(indexPath, indexContent, (err) => {})
 
-copyTempleteFolder(src, tar)
+// copyTempleteFolder(src, tar)
