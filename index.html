@@ -84,6 +84,23 @@
       margin-bottom: 0.6rem;
     }
 
+    .bibtex-container {
+      border: 0;
+
+    }
+
+    .bibtex-container pre {
+      margin-top: 0.4em;
+      margin-bottom: 0.4em;
+    }
+
+    .bibtex-container code {
+      padding-top: 0.4rem;
+      padding-bottom: 0.4rem;
+    }
+
+
+
     footer {
       background-color: #151515;
       padding-top: 1.5rem;
@@ -192,6 +209,15 @@
                           <a href="/">code</a></div>
                       </div>
                     </div>
+                    <div v-if="bibtexActive" class="card bibtex-container">
+                      <div class="card-body" style="padding-top: 0.4em;">
+                        <pre class="code"><code>{{ }}</code></pre>
+                      </div>
+                      <div class="card-footer" style="padding-top: 0; padding-bottom: 0;">
+                        <button class="btn btn-sm btn-primary">Copy</button>
+                        <button class="btn btn-sm">Cancel</button>
+                      </div>
+                    </div>
                   </div> -->
 
                   <my-publication v-for="(pub, index) in pubs" v-bind:key="index" v-bind:pub="pub"></my-publication>
@@ -254,13 +280,28 @@
           <div class="column col-8">
             <p class="pub-title"><strong><a v-bind:href="pub.publication_link">{{ pub.title }}</a></strong>. <em>{{ pub.publisher }}</em></p>
             <p class="pub-authors"><span v-html="pub.authors"></span></p>
-            <div class="pub-links"><a v-bind:href="pub.paper_link">paper</a> / <a class="c-hand" v-on:click="">bibtex</a> / <a v-bind:href="pub.video_link">video</a> / <a v-bind:href="pub.code_link">code</a></div>
+            <div class="pub-links"><a v-bind:href="pub.paper_link">paper</a> / <a class="c-hand" v-on:click="bibtexActive=!bibtexActive">bibtex</a> / <a v-bind:href="pub.video_link">video</a> / <a v-bind:href="pub.code_link">code</a></div>
+          </div>
+        </div>
+        <div v-if="bibtexActive" class="card bibtex-container">
+          <div class="card-body" style="padding-top: 0.4em;">
+            <pre class="code"><code>{{ pub.bibtex }}</code></pre>
+          </div>
+          <div class="card-footer" style="padding-top: 0; padding-bottom: 0;">
+            <button class="btn btn-sm btn-primary" v-on:click="copyBibtex">Copy</button>
+            <button class="btn btn-sm" v-on:click="bibtexActive=!bibtexActive">Cancel</button>
           </div>
         </div>
       </div>
     `,
     data: function() {
       return {
+        bibtexActive: false,
+      }
+    },
+    methods: {
+      copyBibtex: function() {
+        console.log(this.$props['pub']['bibtex'])
       }
     },
   })
@@ -277,7 +318,33 @@
       "video": 'https://www.youtube.com/',
       "code": 'https://github.com/',
       "abstract": '',
-      "bibtex": 'bibtex1'
+      "bibtex": `@inproceedings{yuan2018rearrangement,
+  title={Rearrangement with nonprehensile manipulation using deep reinforcement learning},
+  author={Yuan, Weihao and Stork, Johannes A and Kragic, Danica and Wang, Michael Y and Hang, Kaiyu},
+  booktitle={2018 IEEE International Conference on Robotics and Automation (ICRA)},
+  pages={270--277},
+  year={2018},
+  organization={IEEE}
+}`
+    },
+    {
+      "figure": 'https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg',
+      "page": '/publications/some',
+      "title": 'Empower every person and every organization on the planet to achieve more planet to achieve more',
+      "publisher": 'ECCV',
+      "authors": ['Zan Wang', 'Three Three', 'One One'],
+      "paper": '/publications/paper.pdf',
+      "video": 'https://www.youtube.com/',
+      "code": 'https://github.com/',
+      "abstract": '',
+      "bibtex": `@inproceedings{yuan2018rearrangement,
+  title={Rearrangement with nonprehensile manipulation using deep reinforcement learning},
+  author={Yuan, Weihao and Stork, Johannes A and Kragic, Danica and Wang, Michael Y and Hang, Kaiyu},
+  booktitle={2018 IEEE International Conference on Robotics and Automation (ICRA)},
+  pages={270--277},
+  year={2018},
+  organization={IEEE}
+}`
     }
   ]
 
@@ -327,6 +394,7 @@
     el: '#app',
     data: {
       pubs: getPubsFromArray(),
+      // bibtexActive: true
     },
   })
 </script>
