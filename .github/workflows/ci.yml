@@ -29,8 +29,10 @@ jobs:
           npm i
           npm run build
 
-          cp -r page/ dist/
+          cp index.html dist/
+          cp -r img/ dist/
           cp -r gadget/ dist/
+          cp -r project/ dist/
 
           cd dist
           echo 'silvester.wang' > CNAME

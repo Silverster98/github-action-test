@@ -4,153 +4,49 @@
 <head>
   <meta charset="utf-8">
   <title>Hello</title>
-  <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
-
-  <style>
-    body {
-      background-color: #fafafa;
-    }
-
-    a:hover {
-      text-decoration: none;
-    }
-
-    a:focus {
-      box-shadow: none;
-    }
-
-    head {
-      padding-right: 2%;
-      padding-top: 1%;
-    }
-
-    header a {
-      padding-top: 0.4rem;
-      padding-bottom: 0.4rem;
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-
-    .content {
-      line-height: 1.8;
-      padding-bottom: 2rem;
-    }
-
-    .content a {
-      color: #0070f3;
-    }
-
-    .content-part {
-      padding-top: 1rem;
-      padding-bottom: 0rem;
-    }
-
-    .publication {
-      background-color: #ffffff;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-      padding-left: 1.2rem;
-      padding-right: 1.2rem;
-      line-height: 1.2;
-      border-radius: 5px;
-      box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.02), 1px 1px 15px 0 rgba(0, 0, 0, .03);
-
-      transition: transform .3s ease 0s, box-shadow .6s ease 0s;
-    }
-
-    .publication:hover {
-      transform: translateY(-5px);
-      box-shadow: 1px 10px 30px 0 rgba(0, 0, 0, 0.1);
-    }
-
-    .pub-title {
-      margin-bottom: 0.6rem;
-    }
-
-    .pub-title a {
-      color: rgba(25, 25, 25, 1);
-    }
-
-    .pub-title a:hover {
-      color: rgba(65, 65, 65, 0.85);
-    }
-
-    .pub-authors {
-      margin-bottom: 0.6rem;
-    }
-
-    .bibtex-container {
-      border: 0;
-
-    }
-
-    .bibtex-container pre {
-      margin-top: 0.4em;
-      margin-bottom: 0.4em;
-    }
-
-    .bibtex-container code {
-      padding-top: 0.4rem;
-      padding-bottom: 0.4rem;
-    }
-
-
-
-    footer {
-      background-color: #151515;
-      padding-top: 1.5rem;
-    }
-
-    footer a {
-      text-decoration: none;
-      color: #ffffff;
-    }
-
-    footer a:visited {
-      text-decoration: none;
-      color: #ffffff;
-    }
-  </style>
-
+  <script src="/bundle.js"></script>
 </head>
 
 <body>
   <div id="app">
-    <header class="navbar">
-      <section class="navbar-section">
-      </section>
-      <section class="navbar-section">
-        <a href="/" class="text-gray">HOME</a>
-        <a href="/" class="text-gray">PROJECTS</a>
-      </section>
+    <header class="navbar" style="background-color: #fafafa;">
+      <div class="navbar-brand"></div>
+
+      <div class="navbar-menu">
+        <div class="navbar-start"></div>
+    
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="">
+              <a href="/" class="button is-light" style="background-color: #fafafa; color: #7f7f7f;">HOME</a>
+              <a href="/project/index.html" class="button is-light" style="background-color: #fafafa; color: #7f7f7f;">PROJECTS</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
 
-    <div class="container">
+    <div id="container">
       <div class="columns">
-        <div class="column col-6 col-mx-auto">
+        <div class="column is-half is-offset-one-quarter">
 
           <div class="">
-            <figure class="avatar avatar-xl">
-              <img src="https://picturepan2.github.io/spectre/img/avatar-1.png" alt="...">
+            <figure class="image is-96x96">
+              <img class="is-rounded" src="https://picturepan2.github.io/spectre/img/avatar-1.png" alt="...">
             </figure>
           </div>
 
-          <div style="padding-top: 0.6rem;">
-            <span id="name-des" class="h3"
-              style="margin-top: 8px; margin-left: 4px; margin-right: 16px; font-weight: bold;">Zan Wang</span>
+          <div style="padding-top: 0.6rem; padding-bottom: 1rem;">
+            <span id="name-des" style="margin-top: 8px; margin-left: 4px; margin-right: 16px; font-weight: bold; font-size: 1.4rem;">Zan Wang</span>
             <span id="title-des">
-              <a class="c-hand text-dark" style="text-decoration: none;">
-                <img src="/img/github.370491da.svg" alt=""
-                  style="height: 16px; width: 16px; transform: translateY(2px);" />
+              <a style="text-decoration: none; color: #3b4351;" href="https://github.com/silverster98/">
+                <img src="/img/github.370491da.svg" alt="" style="height: 16px; width: 16px; transform: translateY(2px);" />
                 Github
               </a>
               <span>/</span>
-              <a class="c-hand" style="text-decoration: none; color: #1296db;">
+              <a style="text-decoration: none; color: #1296db;" href="https://drive.silvester.wang/">
                 <img src="/img/onedrive2.svg" alt="" style="height: 16px; width: 16px; transform: translateY(2px);" />
                 OneDrive
               </a>
@@ -158,90 +54,26 @@
           </div>
 
           <div class="content">
-            <div id="about-me" class="hero content-part">
-              <div class="hero-body" style="padding-left: 0rem;">
+            <div id="about-me" class="hero">
+              <div class="hero-body" style="padding: 1.5rem 0rem;">
                 <h4 style="font-weight: bold;">About Me</h4>
-                <p style="margin: 0rem;">I am a graduate student majoring in Computer Science in the School of Computer
-                  Science at <strong>Beijing Institute of Technology(BIT)</strong>. In my graduate stage, I will be
-                  advised by Prof. <a href="https://liangwei-bit.github.io/web/">Wei Liang</a> in <strong>Media
-                    Computing and Intelligent Systems Lab</strong>. My research interests are <em>Computer Vision</em>
-                  and <em>Machine Learning</em>. Besides, I am also interested in hardware and web development.</p>
+                <p style="padding-left: 1rem;">I am a graduate student majoring in Computer Science in the School of Computer Science at <strong>Beijing Institute of Technology(BIT)</strong>. I will be advised by Prof. <a href="https://liangwei-bit.github.io/web/">Wei Liang</a> during my graduate stage in <strong>Media Computing and Intelligent Systems Lab</strong>. My research interests are <em>Computer Vision</em> and <em>Machine Learning</em>. Besides, I am also interested in hardware and web development.</p>
               </div>
             </div>
 
-            <div id="publications" class="hero content-part">
-              <div class="hero-body" style="padding-left: 0rem;">
+            <div id="publications" class="hero">
+              <div class="hero-body" style="padding: 1.5rem 0rem;">
                 <h4 style="font-weight: bold;">Publications</h4>
                 <div class="publications">
 
-                  <!-- <div class="publication">
-                    <div class="columns">
-                      <div class="column col-4">
-                        <div class="card-image">
-                          <img src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg"
-                            class="img-responsive">
-                        </div>
-                      </div>
-                      <div class="column col-8">
-                        <p class="pub-title"><strong><a href="/">Empower every person and every organization on the
-                              planet to achieve more</a></strong>. <em>Conf or Jour</em></p>
-                        <p class="pub-authors"><strong>Zan Wang</strong>, SomeOne, Xiao Ming</p>
-                        <div class="pub-links"><a href="/">paper</a> / <a href="/">bibtex</a> / <a href="/">video</a> /
-                          <a href="/">code</a></div>
-                      </div>
-                    </div>
-                  </div> -->
-
-                  <!-- <div class="publication">
-                    <div class="columns">
-                      <div class="column col-4">
-                        <div class="card-image">
-                          <img src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg"
-                            class="img-responsive">
-                        </div>
-                      </div>
-                      <div class="column col-8">
-                        <p class="pub-title"><strong><a href="/">Empower every person and every organization on the
-                              planet to achieve more</a></strong>. <em>Conf or Jour</em></p>
-                        <p class="pub-authors"><strong>Zan Wang</strong>, SomeOne, Xiao Ming</p>
-                        <div class="pub-links"><a href="/">paper</a> / <a class="c-hand" v-on:click="getBibtex('hello')">bibtex</a> / <a
-                            href="/">video</a> /
-                          <a href="/">code</a></div>
-                      </div>
-                    </div>
-                    <div v-if="bibtexActive" class="card bibtex-container">
-                      <div class="card-body" style="padding-top: 0.4em;">
-                        <pre class="code"><code>{{ }}</code></pre>
-                      </div>
-                      <div class="card-footer" style="padding-top: 0; padding-bottom: 0;">
-                        <button class="btn btn-sm btn-primary">Copy</button>
-                        <button class="btn btn-sm">Cancel</button>
-                      </div>
-                    </div>
-                  </div> -->
-
                   <my-publication v-for="(pub, index) in pubs" v-bind:key="index" v-bind:pub="pub"></my-publication>
-                  <!-- <p>aaa</p> -->
-                  <!-- <div class="modal modal-sm" id="modal-1">
-                    <a class="modal-overlay" aria-label="Close" v-on:click="inactiveModal"></a>
-                    <div class="modal-container">
-                      <div class="modal-header">
-                        <a class="btn btn-clear float-right" aria-label="Close" v-on:click="inactiveModal"></a>
-                      </div>
-                      <div class="modal-body">
-                        <div class="content">
-                          {{ modal_text }}
-                        </div>
-                      </div>
-                    </div>
-                  </div> -->
 
                 </div>
               </div>
             </div>
 
-            <div id="contacts" class="hero content-part">
-              <div class="hero-body" style="padding-left: 0rem;">
+            <div id="contacts" class="hero">
+              <div class="hero-body" style="padding: 1.5rem 0rem;">
                 <h4 style="font-weight: bold;">Contacts</h4>
                 <ul>
                   <li><strong>Email: </strong>zanwang98[at]gmail[dot]com</li>
@@ -255,12 +87,10 @@
     </div>
 
     <footer class="columns">
-      <div class="column col-6 col-mx-auto" style="color: #7f7f7f;">
-        <p>Built with <a href="https://vuejs.org/index.html">Vue.js</a> and <a
-            href="https://picturepan2.github.io/spectre/index.html">Spectre</a> deployed on Github Page.</p>
-        <p>Designed and coded by Zan Wang, deployed by Github Action. Open source on <a
-            href="https://github.com/Silverster98/github-action-test">Github</a>.</p>
-        <p>© 2019 - 2020 Zan Wang</p>
+      <div class="column is-half is-offset-one-quarter" style="color: #7f7f7f;">
+        <p>Built with <a href="https://vuejs.org/index.html">Vue.js</a> and <a href="https://bulma.io/">Bulma</a> and deployed on Github Page.</p>
+        <p>Designed and coded by Zan Wang. Deployed by Github Action. Open source on <a href="https://github.com/Silverster98/github-action-test">Github</a>.</p>
+        <p>© 2019 - 2021 Zan Wang</p>
       </div>
     </footer>
   </div>
@@ -272,24 +102,24 @@
     template: `
       <div class="publication">
         <div class="columns">
-          <div class="column col-4">
+          <div class="column is-4">
             <div class="card-image">
-              <img v-bind:src="pub.figure" class="img-responsive">
+              <img v-bind:src="pub.figure">
             </div>
           </div>
-          <div class="column col-8">
+          <div class="column is-8">
             <p class="pub-title"><strong><a v-bind:href="pub.publication_link">{{ pub.title }}</a></strong>. <em>{{ pub.publisher }}</em></p>
             <p class="pub-authors"><span v-html="pub.authors"></span></p>
-            <div class="pub-links"><a v-bind:href="pub.paper_link">paper</a> / <a class="c-hand" v-on:click="bibtexActive=!bibtexActive">bibtex</a> / <a v-bind:href="pub.video_link">video</a> / <a v-bind:href="pub.code_link">code</a></div>
+            <div class="pub-links"><a v-bind:href="pub.paper_link">paper</a> / <a v-on:click="bibtexActive=!bibtexActive">bibtex</a> / <a v-bind:href="pub.video_link">video</a> / <a v-bind:href="pub.code_link">code</a></div>
           </div>
         </div>
-        <div v-if="bibtexActive" class="card bibtex-container">
-          <div class="card-body" style="padding-top: 0.4em;">
+        <div v-if="bibtexActive" class="bibtex-container">
+          <div class="" style="padding-top: 0.4em;">
             <pre class="code"><code>{{ pub.bibtex }}</code></pre>
           </div>
-          <div class="card-footer" style="padding-top: 0; padding-bottom: 0;">
-            <button class="btn btn-sm btn-primary" v-on:click="copyBibtex">Copy</button>
-            <button class="btn btn-sm" v-on:click="bibtexActive=!bibtexActive">Cancel</button>
+          <div class="" style="padding-top: 0; padding-bottom: 0;">
+            <button class="button is-small is-primary" v-on:click="copyBibtex">Copy</button>
+            <button class="button is-small" v-on:click="bibtexActive=!bibtexActive">Cancel</button>
           </div>
         </div>
       </div>
@@ -301,7 +131,13 @@
     },
     methods: {
       copyBibtex: function() {
-        console.log(this.$props['pub']['bibtex'])
+        let input = document.createElement('textarea')
+        document.body.appendChild(input)
+        input.value = this.$props['pub']['bibtex']
+        input.select()
+        document.execCommand('copy')
+        document.body.removeChild(input)
+        this.bibtexActive = false
       }
     },
   })
@@ -363,7 +199,7 @@
   }
 
   function getBibtexHtml(bibtex) {
-    return 'bibtex ' + bibtex
+    return '' + bibtex
   }
 
   function getPubsFromArray() {

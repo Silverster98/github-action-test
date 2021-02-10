@@ -1,79 +1,97 @@
-
-body{
-  background: #f1f1f1;
+body {
+  background-color: #fafafa;
   font-family: "TIBch", "Classic Grotesque W01", "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
 }
 
-.wrapper{
-  margin: 80px auto;
-  background: #ffffff;
+a:hover {
+  text-decoration: none;
 }
 
-.resume-book{
-  border: 1px solid #d3d3d3;
-  padding: 35px 50px;
+a:focus {
+  box-shadow: none;
 }
 
-#footer{
-  padding: 55px 0 25px 0;
-  font-size: 14px;
-  text-shadow: 1px 1px 5px #d3d3d3;
-}
-#footer a{
-  color: #333333;
-}
-#footer a:hover{
-  color: #FA9600;
+header a {
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
-section h1{
-  font-size: 2.2em;
-  margin-block-start: 0.67em;
-  margin-block-end: 0.67em;
-  font-weight: bold;
-  padding: 20px 5px;
+.content {
+  line-height: 1.8;
+  padding-bottom: 2rem;
 }
 
-section h2{
-  font-size: 1.7em;
-  font-weight: bold;
-  padding: 15px 15px;
+.content a {
+  color: #0070f3;
 }
 
-section h3{
-  font-size: 1.37em;
-  font-weight: bold;
-  padding: 12px 15px;
+.publication {
+  background-color: #ffffff;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  line-height: 1.2;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.02), 1px 1px 15px 0 rgba(0, 0, 0, .03);
+
+  transition: transform .3s ease 0s, box-shadow .6s ease 0s;
 }
 
-section h4{
-  font-size: 1.2em;
-  font-weight: bold;
-  padding: 9px 15px;
+.publication:hover {
+  transform: translateY(-5px);
+  box-shadow: 1px 10px 30px 0 rgba(0, 0, 0, 0.1);
 }
 
-section h5{
-  font-size: 1.1em;
-  font-weight: bold;
-  padding: 6px 15px;
+.pub-title {
+  margin-bottom: 0.6rem;
 }
 
-section p{
-  font-size: 1.1em;
-  padding: 0 15px;
-  line-height: 1.7;
+.pub-title a {
+  color: rgba(25, 25, 25, 1);
 }
 
-section ul{
-  list-style-type: disc;
-  padding-inline-start: 35px;
+.pub-title a:hover {
+  color: rgba(65, 65, 65, 0.85);
 }
 
-li {
-  display: list-item;
-  text-align: inherit;
+.pub-authors {
+  margin-bottom: 0.6rem;
 }
 
-li p{
-  text-align: inherit;
+.bibtex-container {
+  border: 0;
+
+}
+
+.bibtex-container pre {
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+}
+
+.bibtex-container code {
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+
+
+
+footer {
+  background-color: #151515;
+  padding: 1.5rem 0rem;
+  line-height: 2rem;
+}
+
+footer a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+footer a:visited {
+  text-decoration: none;
+  color: #ffffff;
 }

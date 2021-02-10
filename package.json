@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.config.js && node tool.js",
-    "run": "npm run build && powershell cp -r page/ dist/ && powershell cp -r gadget/ dist/ && http-server ./dist -p 4000"
+    "build": "webpack --config webpack.config.js",
+    "run": "npm run build && powershell cp index.html dist/ && powershell cp -r gadget/ dist/ && powershell cp -r project/ dist/ && powershell cp -r img/ dist/ && http-server ./dist -p 4000"
   },
   "repository": {
     "type": "git",
