@@ -5,9 +5,24 @@
   <title>PROJECTS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="/bundle.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif;
+    }
+
+    a.repo-link {
+      color: #000000;
+    }
+    a.repo-link:hover {
+      text-decoration: underline;
+      color: #000000;
+    }
+  </style>
 </head>
 <body>
-<div>
+<div id="app">
   <header class="navbar" style="background-color: #fafafa;">
     <div class="navbar-brand"></div>
 
@@ -33,235 +48,14 @@
         <div style="padding: 0.6rem 0rem;"><span style="font-size: 1rem;">Some projects I participated in.</span></div>
       </div>
 
-      <div class="box">
-        <article class="media">
-          <div class="media-left"></div>
-          <div class="media-content">
-            <div class="content" style="padding-bottom: 0.25rem;">
-              <p>
-                <strong>bitmips2019</strong>
-                <br>
-                We used this work to take part in <a href="http://www.nscscc.org/">NSCSCC</a> in 2019. In the competition, we implemented a MIPS cpu and got 14 performance scores in the preliminary. But it is a pity that we didn’t enter the finals.
-              </p>
-            </div>
-            <nav class="level">
-              <div class="level-left">
-                
-                <a class="level-item" aria-label="reply">
-                  <span class="icon is-small">
-                    <img src="/img/github.370491da.svg" alt="" style="height: 16px; width: 16px; transform: translateY(2px);" />
-                  </span>
-                </a>
-
-                <a class="level-item" aria-label="reply">
-                  <span class="icon is-small">
-                    <img src="/img/github.370491da.svg" alt="" style="height: 16px; width: 16px; transform: translateY(2px);" />
-                  </span>
-                </a>
-
-              </div>
-            </nav>
-          </div>
-        </article>
-      </div>
-
-      <div class="box">
-        <article class="media">
-          <div class="media-left"></div>
-          <div class="media-content">
-            <div class="content" style="padding-bottom: 0.25rem;">
-              <p>
-                <strong>BIT MIPS Experiments</strong>
-                <br>
-                This is a series of experiments about computer system. It aims at guiding beginner to implement a simple computer system which includes hardware and software.
-              </p>
-            </div>
-            <nav class="level">
-              <div class="level-left">
-                
-                <a class="level-item" aria-label="reply">
-                  <span class="icon is-small">
-                    <img src="/img/github.370491da.svg" alt="" style="height: 16px; width: 16px; transform: translateY(2px);" />
-                  </span>
-                </a>
-
-                <a class="level-item" aria-label="reply">
-                  <span class="icon is-small">
-                    <img src="/img/github.370491da.svg" alt="" style="height: 16px; width: 16px; transform: translateY(2px);" />
-                  </span>
-                </a>
-
-              </div>
-            </nav>
-          </div>
-        </article>
-      </div>
-
-      <div class="box">
-        <article class="media">
-          <div class="media-left"></div>
-          <div class="media-content">
-            <div class="content" style="padding-bottom: 0.25rem;">
-              <p>
-                <strong>BIThesis</strong>
-                <br>
-                LaTeX templates for your bachelor graduation thesis (and more) here at BIT.
-              </p>
-            </div>
-            <nav class="level">
-              <div class="level-left">
-                
-                <a class="level-item" aria-label="reply">
-                  <span class="icon is-small">
-                    <img src="/img/github.370491da.svg" alt="" style="height: 16px; width: 16px; transform: translateY(2px);" />
-                  </span>
-                </a>
-
-                <a class="level-item" aria-label="reply">
-                  <span class="icon is-small">
-                    <img src="/img/github.370491da.svg" alt="" style="height: 16px; width: 16px; transform: translateY(2px);" />
-                  </span>
-                </a>
-
-              </div>
-            </nav>
-          </div>
-        </article>
-      </div>
-
-      <div class="box">
-        <article class="media">
-          <div class="media-left"></div>
-          <div class="media-content">
-            <div class="content" style="padding-bottom: 0.25rem;">
-              <p>
-                <strong>vscode-math-to-image</strong>
-                <br>
-                This is a VS Code extension to help you convert a standard LaTeX math equation to an image (remote or local SVG which can be embedded inside Markdown files).
-              </p>
-            </div>
-            <nav class="level">
-              <div class="level-left">
-                
-                <a class="level-item" aria-label="reply">
-                  <span class="icon is-small">
-                    <img src="/img/github.370491da.svg" alt="" style="height: 16px; width: 16px; transform: translateY(2px);" />
-                  </span>
-                </a>
-
-                <a class="level-item" aria-label="reply">
-                  <span class="icon is-small">
-                    <img src="/img/github.370491da.svg" alt="" style="height: 16px; width: 16px; transform: translateY(2px);" />
-                  </span>
-                </a>
-
-              </div>
-            </nav>
-          </div>
-        </article>
-      </div>
-
+      <my-repo v-for="(repo, index) in projects" v-bind:key="index" v-bind:repo="repo"></my-repo>
 
       <div style="padding: 1rem 0rem;">
         <div><span style="font-weight: bold; font-size: 1.4rem; color: #000000;">Gadgets</span></div>
         <div style="padding: 0.6rem 0rem;"><span style="font-size: 1rem;">Some toy programs within a thousand lines of code.</span></div>
       </div>
 
-      <div class="box">
-        <article class="media">
-          <div class="media-left"></div>
-          <div class="media-content">
-            <div class="content" style="padding-bottom: 0.25rem;">
-              <p>
-                <strong>Pixel Draw</strong>
-                <br>
-                This tool allows you to "edit" an image pixel by pixel. You can just click your mouse to change the RGB values of every pixel in an image.
-              </p>
-            </div>
-            <nav class="level">
-              <div class="level-left">
-                
-                <a class="level-item" aria-label="reply">
-                  <span class="icon is-small">
-                    <img src="/img/github.370491da.svg" alt="" style="height: 16px; width: 16px; transform: translateY(2px);" />
-                  </span>
-                </a>
-
-                <a class="level-item" aria-label="reply">
-                  <span class="icon is-small">
-                    <img src="/img/github.370491da.svg" alt="" style="height: 16px; width: 16px; transform: translateY(2px);" />
-                  </span>
-                </a>
-
-              </div>
-            </nav>
-          </div>
-        </article>
-      </div>
-
-      <div class="box">
-        <article class="media">
-          <div class="media-left"></div>
-          <div class="media-content">
-            <div class="content" style="padding-bottom: 0.25rem;">
-              <p>
-                <strong>Timing Creator</strong>
-                <br>
-                Using code to create a timing figure which is usually used in digital circuit design to indicate temporal relation.
-              </p>
-            </div>
-            <nav class="level">
-              <div class="level-left">
-                
-                <a class="level-item" aria-label="reply">
-                  <span class="icon is-small">
-                    <img src="/img/github.370491da.svg" alt="" style="height: 16px; width: 16px; transform: translateY(2px);" />
-                  </span>
-                </a>
-
-                <a class="level-item" aria-label="reply">
-                  <span class="icon is-small">
-                    <img src="/img/github.370491da.svg" alt="" style="height: 16px; width: 16px; transform: translateY(2px);" />
-                  </span>
-                </a>
-
-              </div>
-            </nav>
-          </div>
-        </article>
-      </div>
-
-      <div class="box">
-        <article class="media">
-          <div class="media-left"></div>
-          <div class="media-content">
-            <div class="content" style="padding-bottom: 0.25rem;">
-              <p>
-                <strong>mips-instruction-tool</strong>
-                <br>
-                This is a mips instruction tool implemented by Rust. You can translate mips instructions by this tool.
-              </p>
-            </div>
-            <nav class="level">
-              <div class="level-left">
-                
-                <a class="level-item" aria-label="reply">
-                  <span class="icon is-small">
-                    <img src="/img/github.370491da.svg" alt="" style="height: 16px; width: 16px; transform: translateY(2px);" />
-                  </span>
-                </a>
-
-                <a class="level-item" aria-label="reply">
-                  <span class="icon is-small">
-                    <img src="/img/github.370491da.svg" alt="" style="height: 16px; width: 16px; transform: translateY(2px);" />
-                  </span>
-                </a>
-
-              </div>
-            </nav>
-          </div>
-        </article>
-      </div>
+      <my-repo v-for="(repo, index) in gadgets" v-bind:key="index" v-bind:repo="repo"></my-repo>
 
     </div>
   </div>
@@ -275,4 +69,97 @@
   </footer>
 </div>
 </body>
+<script>
+
+Vue.component('my-repo', {
+  props: ['repo'],
+  template: `
+  <div class="box">
+    <article class="media">
+      <div class="media-left"></div>
+      <div class="media-content">
+        <div class="content" style="padding-bottom: 0.25rem;">
+          <p>
+            <a class="repo-link" v-bind:href="repo.link"><strong style="font-size: 18px">{{ repo.title }}</strong></a>
+            <br>
+            <span v-html="repo.content"></span>
+          </p>
+        </div>
+        <nav class="level">
+          <div class="level-left">
+            
+            <a v-bind:href="repo.link" class="level-item" aria-label="reply">
+                <img v-bind:src="repo.stars" alt="" style="height: auto; width: auto; transform: translateY(2px);"/>
+            </a>
+
+            <a v-bind:href="repo.link" class="level-item" aria-label="reply">
+                <img v-bind:src="repo.forks" alt="" style="height: auto; width: auto; transform: translateY(2px);"/>
+            </a>
+
+          </div>
+        </nav>
+      </div>
+    </article>
+  </div>
+  `,
+})
+
+function getProjects(repo, key) {
+  if (repo[key] == undefined) {
+    return []
+  } else {
+    projects = repo[key]
+    for (let i = 0; i < projects.length; i++) {
+      projects[i]["link"] = "https://github.com/" + projects[i]["title"]
+      projects[i]["stars"] = "https://img.shields.io/github/stars/" + projects[i]["title"] + "?style=social"
+      projects[i]["forks"] = "https://img.shields.io/github/forks/" + projects[i]["title"] + "?style=social"
+    }
+    console.log(projects)
+    return projects
+  }
+}
+
+// function getGadgets(repo) {
+//   if (repo["gadgets"] == undefined) {
+//     return []
+//   } else {
+//     gadgets = repo["gadgets"]
+//     for (let i = 0; i < gadgets.length; i++) {
+//       gadgets[i]["link"] = "https://github.com/" + gadgets[i]["title"]
+//       gadgets[i]["stars"] = "https://img.shields.io/github/stars/" + gadgets[i]["title"] + "?style=social"
+//       gadgets[i]["forks"] = "https://img.shields.io/github/forks/" + gadgets[i]["title"] + "?style=social"
+//     }
+//     console.log(gadgets)
+//     return gadgets
+//   }
+// }
+
+let app = new Vue({
+  el: '#app',
+  data: {
+    myrepo: {}
+  },
+  computed: {
+    projects: function() {
+      return getProjects(this.myrepo, "projects")
+    },
+    gadgets: function() {
+      // return getGadgets(this.myrepo)
+      return getProjects(this.myrepo, "gadgets")
+    }
+  },
+  methods: {
+    getrepo: function() {
+      let vm = this
+      axios.get('./data.json')
+        .then(function (response) {
+          vm.myrepo = response.data
+        })
+    }
+  }
+})
+
+app.getrepo()
+
+</script>
 </html>

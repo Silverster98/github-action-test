@@ -1,0 +1,30 @@
+{
+  "projects": [
+    {
+      "title": "Silverster98/bitmips2019",
+      "content": "We used this work to take part in <a href=\"http://www.nscscc.org/\">NSCSCC</a> in 2019. In the competition, we implemented a MIPS cpu and got 14 performance scores in the preliminary. But it is a pity that we didn't enter the finals."
+    },
+    {
+      "title": "bit-mips/bitmips_experiments",
+      "content": "This is a series of experiments about computer system. It aims at guiding beginner to implement a simple computer system which includes hardware and software."
+    },
+    {
+      "title": "BITNP/BIThesis",
+      "content": "LaTeX templates for your bachelor graduation thesis (and more) here at BIT."
+    },
+    {
+      "title": "TeamMeow/vscode-math-to-image",
+      "content": "This is a VS Code extension that helps you convert a standard LaTeX math equation to an image (remote or local SVG which can be embedded inside Markdown files)."
+    }
+  ],
+  "gadgets": [
+    {
+      "title": "Silverster98/gadget",
+      "content": "This repo contains some useful web tools. \"<a href=\"/gadget/pixel_drawer/\">Pixel Draw</a>\" allows you to \"edit\" an image pixel by pixel. You can just click your mouse to change the RGB values of every pixel in an image. \"<a href=\"/gadget/timing_creator/\">Timing Creator</a>\" can let you use code to create a timing figure which is usually used in digital circuit design to indicate temporal relation."
+    },
+    {
+      "title": "Silverster98/mips-instruction-tool",
+      "content": "This is a mips instruction tool implemented by Rust. You can translate mips instructions by this tool."
+    }
+  ]
+}
