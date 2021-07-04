@@ -1,4 +1,11 @@
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   background-color: #fafafa;
   font-family: "TIBch", "Classic Grotesque W01", "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
 }
@@ -78,20 +85,30 @@ header a {
   padding-bottom: 0.4rem;
 }
 
-
-
-footer {
-  background-color: #151515;
-  padding: 1.5rem 0rem;
-  line-height: 2rem;
+#app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-footer a {
+.main-content {
+  flex: 1 0 auto;
+  padding-left: 1rem;
+}
+
+.footer {
+  flex-shrink: 0;
+  padding: 1.5rem 0rem 1.5rem 1rem;
+  line-height: 2rem;
+  background-color: #151515;
+}
+
+.footer a {
   text-decoration: none;
   color: #ffffff;
 }
 
-footer a:visited {
+.footer a:visited {
   text-decoration: none;
   color: #ffffff;
 }

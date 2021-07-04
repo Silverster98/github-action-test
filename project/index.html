@@ -23,48 +23,52 @@
 </head>
 <body>
 <div id="app">
-  <header class="navbar" style="background-color: #fafafa;">
-    <div class="navbar-brand"></div>
+  <div class="main-content">
+    <header class="navbar" style="background-color: #fafafa;">
+      <div class="navbar-brand"></div>
 
-    <div class="navbar-menu">
-      <div class="navbar-start"></div>
-  
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="">
-            <a href="/" class="button is-light" style="background-color: #fafafa; color: #7f7f7f;">HOME</a>
-            <a href="/project/index.html" class="button is-light" style="background-color: #fafafa; color: #7f7f7f;">PROJECTS</a>
+      <div class="navbar-menu">
+        <div class="navbar-start"></div>
+    
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="">
+              <a href="/" class="button is-light" style="background-color: #fafafa; color: #7f7f7f;">HOME</a>
+              <a href="/project/index.html" class="button is-light" style="background-color: #fafafa; color: #7f7f7f;">PROJECTS</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <div class="columns" style="padding-bottom: 2rem;">
-    <div class="column is-half is-offset-one-quarter">
+    <div class="columns" style="padding-bottom: 2rem;">
+      <div class="column is-half is-offset-one-quarter">
 
-      <div style="padding: 1rem 0rem;">
-        <div><span style="font-weight: bold; font-size: 1.4rem; color: #000000;">Projects</span></div>
-        <div style="padding: 0.6rem 0rem;"><span style="font-size: 1rem;">Some projects I participated in.</span></div>
+        <div style="padding: 1rem 0rem;">
+          <div><span style="font-weight: bold; font-size: 1.4rem; color: #000000;">Projects</span></div>
+          <div style="padding: 0.6rem 0rem;"><span style="font-size: 1rem;">Some projects I participated in.</span></div>
+        </div>
+
+        <my-repo v-for="(repo, index) in projects" v-bind:key="index" v-bind:repo="repo"></my-repo>
+
+        <div style="padding: 1rem 0rem;">
+          <div><span style="font-weight: bold; font-size: 1.4rem; color: #000000;">Gadgets</span></div>
+          <div style="padding: 0.6rem 0rem;"><span style="font-size: 1rem;">Some toy programs within a thousand lines of code.</span></div>
+        </div>
+
+        <my-repo v-for="(repo, index) in gadgets" v-bind:key="index" v-bind:repo="repo"></my-repo>
+
       </div>
-
-      <my-repo v-for="(repo, index) in projects" v-bind:key="index" v-bind:repo="repo"></my-repo>
-
-      <div style="padding: 1rem 0rem;">
-        <div><span style="font-weight: bold; font-size: 1.4rem; color: #000000;">Gadgets</span></div>
-        <div style="padding: 0.6rem 0rem;"><span style="font-size: 1rem;">Some toy programs within a thousand lines of code.</span></div>
-      </div>
-
-      <my-repo v-for="(repo, index) in gadgets" v-bind:key="index" v-bind:repo="repo"></my-repo>
-
     </div>
   </div>
 
-  <footer class="columns">
-    <div class="column is-half is-offset-one-quarter" style="color: #7f7f7f;">
-      <p>Built with <a href="https://vuejs.org/index.html">Vue.js</a> and <a href="https://bulma.io/">Bulma</a> and deployed on Github Page.</p>
-      <p>Designed and coded by Zan Wang. Deployed by Github Action. Open source on <a href="https://github.com/Silverster98/github-action-test">Github</a>.</p>
-      <p>© 2019 - 2021 Zan Wang</p>
+  <footer class="footer">
+    <div class="columns">
+      <div class="column is-half is-offset-one-quarter" style="color: #7f7f7f;">
+        <p>Built with <a href="https://vuejs.org/index.html">Vue.js</a> and <a href="https://bulma.io/">Bulma</a> and deployed on Github Page.</p>
+        <p>Designed and coded by Zan Wang. Deployed by Github Action. Open source on <a href="https://github.com/Silverster98/github-action-test">Github</a>.</p>
+        <p>© 2019 - {{ currentYear }} Zan Wang</p>
+      </div>
     </div>
   </footer>
 </div>
@@ -114,30 +118,15 @@ function getProjects(repo, key) {
       projects[i]["stars"] = "https://img.shields.io/github/stars/" + projects[i]["title"] + "?style=social"
       projects[i]["forks"] = "https://img.shields.io/github/forks/" + projects[i]["title"] + "?style=social"
     }
-    console.log(projects)
     return projects
   }
 }
 
-// function getGadgets(repo) {
-//   if (repo["gadgets"] == undefined) {
-//     return []
-//   } else {
-//     gadgets = repo["gadgets"]
-//     for (let i = 0; i < gadgets.length; i++) {
-//       gadgets[i]["link"] = "https://github.com/" + gadgets[i]["title"]
-//       gadgets[i]["stars"] = "https://img.shields.io/github/stars/" + gadgets[i]["title"] + "?style=social"
-//       gadgets[i]["forks"] = "https://img.shields.io/github/forks/" + gadgets[i]["title"] + "?style=social"
-//     }
-//     console.log(gadgets)
-//     return gadgets
-//   }
-// }
-
 let app = new Vue({
   el: '#app',
   data: {
-    myrepo: {}
+    myrepo: {},
+    currentYear: (new Date()).getFullYear()
   },
   computed: {
     projects: function() {
