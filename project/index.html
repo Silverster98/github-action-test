@@ -25,18 +25,20 @@
 <div id="app">
   <div class="main-content">
     <header class="navbar" style="background-color: #fafafa;">
-      <div class="navbar-brand"></div>
+      <div class="navbar-brand">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
 
       <div class="navbar-menu">
         <div class="navbar-start"></div>
     
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="">
-              <a href="/" class="button is-light" style="background-color: #fafafa; color: #7f7f7f;">HOME</a>
-              <a href="/project/index.html" class="button is-light" style="background-color: #fafafa; color: #7f7f7f;">PROJECTS</a>
-            </div>
-          </div>
+        <div class="navbar-end" style="margin-right: 1rem;">
+          <a href="/" class="navbar-item" style="background-color: #fafafa; color: #7f7f7f;">HOME</a>
+          <a href="/project/index.html" class="navbar-item" style="background-color: #fafafa; color: #7f7f7f;">PROJECTS</a>
         </div>
       </div>
     </header>
